@@ -66,7 +66,7 @@ Environment: no special env vars required for local.
 Place the images below in `public/screenshots/`. If your filenames differ, either rename them or update the paths here.
 
 
-<img src="/home/garvit/Desktop/Next.js/mutal-fund-next-project/public/screenshots/image.png" alt="Home" width="900" />
+<img src="public/screenshots/image.png">
 
 
 <img src="public/screenshots/image-1.png"/>

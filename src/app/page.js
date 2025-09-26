@@ -15,31 +15,31 @@ import React from "react";
 
 export default function Home() {
   return (
-    <Container sx={{ py: 8 }}>
+    <Container sx={{ py: 10, maxWidth: "1200px !important" }}>
       {/* Hero Section */}
       <Box
         sx={{
           textAlign: "center",
-          mb: 10,
+          mb: 12,
           borderRadius: 6,
-          p: { xs: 4, md: 8 },
-          boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.85), rgba(40, 38, 38, 0.21)),
-            url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwIz4QtXanWPaem5JuOuFIsWMBWfbDlkFC7A&s")
-          `,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          p: { xs: 4, md: 10 },
+          background:
+            "linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05))",
+          backdropFilter: "blur(16px)",
+          boxShadow: "0 8px 40px rgba(108,71,255,0.2)",
         }}
       >
         <Typography
-          variant="h3"
+          variant="h2"
           gutterBottom
           sx={{
-            backgroundImage: "linear-gradient(90deg, #7b2ff7, #f107a3)",
+            backgroundImage:
+              "linear-gradient(90deg, #7b2ff7, #f107a3, #ff8c00)",
+            backgroundSize: "200% auto",
             WebkitBackgroundClip: "text",
             color: "transparent",
             fontWeight: 800,
+            animation: "gradientShift 6s linear infinite",
           }}
         >
           🚀 Discover Mutual Funds with Confidence
@@ -47,32 +47,34 @@ export default function Home() {
         <Typography
           variant="body1"
           color="text.secondary"
-          sx={{ maxWidth: 720, mx: "auto", fontSize: "1.1rem" }}
+          sx={{ maxWidth: 720, mx: "auto", fontSize: "1.2rem" }}
         >
           Mutual Fund Explorer helps you search schemes, view detailed metadata,
-          analyze historical NAV, and run SIP calculations to understand
-          potential outcomes. Start exploring the Indian mutual fund universe
-          today.
+          analyze NAV history, and run SIP simulations for smarter investing.
         </Typography>
+
         <Stack
           spacing={2}
           direction={{ xs: "column", sm: "row" }}
           justifyContent="center"
-          sx={{ mt: 4 }}
+          sx={{ mt: 5 }}
         >
           <Button
             variant="contained"
             size="large"
             sx={{
-              px: 4,
-              py: 1.5,
-              borderRadius: 8,
-              fontWeight: 600,
+              px: 5,
+              py: 1.8,
+              borderRadius: 10,
+              fontWeight: 700,
+              fontSize: "1.1rem",
               background: "linear-gradient(90deg, #6C47FF, #9333EA)",
-              boxShadow: "0 4px 14px rgba(108,71,255,0.4)",
+              boxShadow: "0 6px 20px rgba(108,71,255,0.5)",
               "&:hover": {
                 background: "linear-gradient(90deg, #5b38e6, #7a29cc)",
+                transform: "scale(1.05)",
               },
+              transition: "all 0.3s ease",
             }}
             component={Link}
             href="/funds"
@@ -83,41 +85,43 @@ export default function Home() {
       </Box>
 
       {/* Features */}
-      <Grid container spacing={4} sx={{ mb: 10 }}>
+      <Grid container spacing={5} sx={{ mb: 12 }}>
         {[
           {
             title: "Search & Filter",
-            desc: "Quickly find schemes by name and navigate to in-depth details for each fund.",
+            desc: "Quickly find schemes by name and explore in-depth details.",
             icon: "🔎",
           },
           {
             title: "Returns & NAV",
-            desc: "View precomputed returns across periods and visualize last-year NAV trends.",
+            desc: "Visualize precomputed returns and track NAV history.",
             icon: "📈",
           },
           {
             title: "SIP Calculator",
-            desc: "Simulate SIP investments over time with configurable frequency and dates.",
+            desc: "Simulate SIP investments over time with ease.",
             icon: "💰",
           },
         ].map((feature) => (
           <Grid item xs={12} md={4} key={feature.title}>
             <Card
               sx={{
-                borderRadius: 4,
-                p: 2,
+                borderRadius: 5,
+                p: 3,
                 textAlign: "center",
-                background: "linear-gradient(135deg, #ffffff, #f9f9fb)",
-                boxShadow: "0 6px 18px rgba(0,0,0,0.08)",
-                transition: "transform 0.3s, box-shadow 0.3s",
+                background:
+                  "linear-gradient(135deg, rgba(255,255,255,0.9), rgba(250,250,255,0.6))",
+                backdropFilter: "blur(12px)",
+                boxShadow: "0 10px 24px rgba(0,0,0,0.08)",
+                transition: "transform 0.4s, box-shadow 0.4s",
                 "&:hover": {
-                  transform: "translateY(-6px)",
-                  boxShadow: "0 12px 28px rgba(0,0,0,0.12)",
+                  transform: "translateY(-10px) scale(1.03)",
+                  boxShadow: "0 16px 36px rgba(0,0,0,0.12)",
                 },
               }}
             >
               <CardContent>
-                <Typography variant="h3" gutterBottom>
+                <Typography variant="h2" gutterBottom>
                   {feature.icon}
                 </Typography>
                 <Typography
@@ -136,62 +140,52 @@ export default function Home() {
         ))}
       </Grid>
 
-      {/* Why Choose Us */}
-      <Box sx={{ textAlign: "center", mb: 10 }}>
-        <Typography variant="h4" sx={{ fontWeight: 700, mb: 4 }}>
-          🌟 Why Choose Mutual Fund Explorer?
-        </Typography>
-        <Grid container spacing={4}>
-          {[
-            { text: "✅ Easy-to-use interface with fast search" },
-            { text: "📊 Accurate data from reliable sources" },
-            { text: "⚡ Real-time NAV & performance tracking" },
-            { text: "🔒 Secure & privacy-first platform" },
-          ].map((item, i) => (
-            <Grid item xs={12} md={3} key={i}>
-              <Typography variant="body1">{item.text}</Typography>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-
-      {/* How It Works */}
-      <Box sx={{ textAlign: "center", mb: 10 }}>
-        <Typography variant="h4" sx={{ fontWeight: 700, mb: 4 }}>
+      {/* How It Works (Stepper Style) */}
+      <Box sx={{ textAlign: "center", mb: 12 }}>
+        <Typography variant="h4" sx={{ fontWeight: 800, mb: 6 }}>
           🛠️ How It Works
         </Typography>
-        <Grid container spacing={4}>
+        <Grid container spacing={6} justifyContent="center">
           {[
             {
               step: "1",
               title: "Search a Fund",
-              desc: "Browse or search from thousands of mutual funds available in India.",
+              desc: "Browse or search from thousands of mutual funds available.",
             },
             {
               step: "2",
               title: "Analyze Details",
-              desc: "Check fund house, type, category, NAV history, and precomputed returns.",
+              desc: "Check type, category, NAV history & precomputed returns.",
             },
             {
               step: "3",
               title: "Plan Investments",
-              desc: "Use our SIP calculator to simulate investments and future value.",
+              desc: "Use our SIP calculator to simulate investments.",
             },
-          ].map((item) => (
+          ].map((item, i) => (
             <Grid item xs={12} md={4} key={item.step}>
-              <Card
+              <Box
                 sx={{
+                  p: 4,
                   borderRadius: 4,
-                  textAlign: "center",
-                  p: 3,
-                  height: "100%",
-                  background: "linear-gradient(135deg, #fafafa, #f0f0f5)",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
+                  position: "relative",
+                  background:
+                    "linear-gradient(135deg, rgba(255,255,255,0.95), rgba(245,245,250,0.7))",
+                  backdropFilter: "blur(10px)",
+                  boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
+                  "&:hover": {
+                    transform: "scale(1.03)",
+                    transition: "0.3s ease",
+                  },
                 }}
               >
                 <Typography
                   variant="h3"
-                  sx={{ fontWeight: 700, color: "#6C47FF", mb: 1 }}
+                  sx={{
+                    fontWeight: 800,
+                    color: "#6C47FF",
+                    mb: 2,
+                  }}
                 >
                   {item.step}
                 </Typography>
@@ -201,7 +195,7 @@ export default function Home() {
                 <Typography variant="body2" color="text.secondary">
                   {item.desc}
                 </Typography>
-              </Card>
+              </Box>
             </Grid>
           ))}
         </Grid>
@@ -211,32 +205,37 @@ export default function Home() {
       <Box
         sx={{
           textAlign: "center",
-          p: { xs: 4, md: 6 },
+          p: { xs: 5, md: 8 },
           borderRadius: 6,
-          background: "linear-gradient(90deg, #6C47FF, #9333EA)",
+          background:
+            "linear-gradient(120deg, #6C47FF, #9333EA, #f107a3)",
           color: "white",
-          boxShadow: "0 8px 24px rgba(0,0,0,0.2)",
+          boxShadow: "0 12px 32px rgba(0,0,0,0.25)",
         }}
       >
-        <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
+        <Typography variant="h3" sx={{ fontWeight: 800, mb: 3 }}>
           🚀 Start Your Investment Journey Today
         </Typography>
-        <Typography variant="body1" sx={{ mb: 3, opacity: 0.9 }}>
-          Explore, compare, and analyze mutual funds with ease.
+        <Typography variant="body1" sx={{ mb: 4, opacity: 0.95 }}>
+          Explore, compare, and analyze mutual funds with confidence.
         </Typography>
         <Button
           variant="contained"
           size="large"
           sx={{
-            px: 4,
-            py: 1.5,
-            borderRadius: 8,
-            fontWeight: 600,
+            px: 5,
+            py: 1.8,
+            borderRadius: 10,
+            fontWeight: 700,
+            fontSize: "1.1rem",
             backgroundColor: "#fff",
             color: "#6C47FF",
+            boxShadow: "0 4px 14px rgba(255,255,255,0.4)",
             "&:hover": {
               backgroundColor: "#f5f5f5",
+              transform: "scale(1.08)",
             },
+            transition: "all 0.3s ease",
           }}
           component={Link}
           href="/funds"
@@ -244,6 +243,21 @@ export default function Home() {
           🔍 Explore Funds
         </Button>
       </Box>
+
+      {/* Gradient Animation */}
+      <style jsx>{`
+        @keyframes gradientShift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      `}</style>
     </Container>
   );
 }

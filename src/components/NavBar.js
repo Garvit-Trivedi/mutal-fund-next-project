@@ -43,7 +43,7 @@ export default function NavBar() {
           {[
             { label: "Home", href: "/" },
             { label: "Funds", href: "/funds" },
-            { label: "Compare", href: "/compare" },
+            // { label: "Compare", href: "/compare" },
             { label: "Scheme Details", href: `/scheme/${defaultSchemeCode}` },
           ].map((item) => (
             <Button

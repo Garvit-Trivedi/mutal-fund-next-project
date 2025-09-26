@@ -1,42 +1,57 @@
 "use client";
 
 import React from "react";
-import { Box, Paper, Typography, LinearProgress, alpha } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import AutoGraphRoundedIcon from "@mui/icons-material/AutoGraphRounded";
-import { useTheme } from "@mui/material/styles";
 
 export default function BrandedLoader({ label = "Loading..." }) {
-  const theme = useTheme();
-  const gradient = `linear-gradient(135deg, ${alpha(theme.palette.primary.main, 0.18)} 0%, ${alpha(theme.palette.primary.light, 0.18)} 100%)`;
-
   return (
-    <Box sx={{ display: "grid", placeItems: "center", minHeight: "40vh", px: 2 }}>
-      <Paper
-        elevation={0}
+    <Box
+      sx={{
+        display: "grid",
+        placeItems: "center",
+        minHeight: "60vh",
+        textAlign: "center",
+        gap: 3,
+      }}
+    >
+      {/* Circular Gradient Loader */}
+      <Box
         sx={{
-          p: 4,
-          width: "100%",
-          maxWidth: 520,
-          borderRadius: 4,
-          border: "1px solid",
-          borderColor: theme.palette.divider,
-          backgroundImage: gradient,
-          backdropFilter: "blur(8px)",
+          width: 90,
+          height: 90,
+          borderRadius: "50%",
+          border: "6px solid transparent",
+          borderTop: "6px solid #6C47FF",
+          borderRight: "6px solid #9333EA",
+          borderBottom: "6px solid #f107a3",
+          animation: "spin 1.4s linear infinite",
         }}
-      >
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
-          <AutoGraphRoundedIcon color="primary" sx={{ fontSize: 28 }} />
-          <Typography variant="subtitle1" fontWeight={700}>
-            Mutual Fund Explorer
-          </Typography>
-        </Box>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
-          {label}
+      />
+
+      {/* Icon + Text */}
+      <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 1 }}>
+        <AutoGraphRoundedIcon sx={{ fontSize: 28, color: "#6C47FF" }} />
+        <Typography variant="h6" sx={{ fontWeight: 700 }}>
+          Mutual Fund Explorer
         </Typography>
-        <LinearProgress color="primary" sx={{ height: 8, borderRadius: 999 }} />
-      </Paper>
+      </Box>
+
+      {/* Label */}
+      <Typography variant="body2" color="text.secondary">
+        {label}
+      </Typography>
+
+      <style jsx>{`
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
     </Box>
   );
 }
-
-

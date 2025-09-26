@@ -33,32 +33,7 @@ npm run dev
 Environment: no special env vars required for local.
 
 ---
-## Key Features
-
-### 🧭 Navigation
-- Seamless multi-page navigation: **Home**, **Funds**, **Scheme Details**, and **Fund Comparison Tool**  
-- Intuitive layout ensuring quick access to all core functionalities  
-
-### 💹 Funds Listing
-- Smart search with **autocomplete filtering** for quick scheme discovery  
-- Professional, responsive cards featuring avatars, scheme titles, and metadata chips  
-- Adaptive grid layout: displays 1–3 cards per row depending on screen size  
-- Smooth hover animations for better interactivity and quick navigation to individual scheme pages  
-
-### 📊 Scheme Details
-- **Overview Tab:** Interactive NAV chart for the past year, with area fill and optional **moving average** overlays  
-- **Returns Tab:** Pre-calculated returns for informed investment analysis  
-- **SIP Calculator:** Simulate systematic investment plans with flexible inputs  
-- **Lumpsum Calculator:** Evaluate one-time investments across schemes  
-- **SWP (Systematic Withdrawal Plan):** Plan withdrawals efficiently  
-- **Strategies Compare Tab:** Visual comparison of SIP vs Lumpsum vs SWP strategies  
-- **Dynamic Loader:** Branded loading animation ensures a smooth user experience while data is fetched  
-
-### 📈 Fund Comparison Tool (`/compare`)
-- Compare multiple schemes side-by-side with ease  
-- Overlay **NAV trends** for selected schemes over the last year  
-- Comprehensive **metadata snapshot**: fund house, type, and category  
-- **Risk vs Return Scatter Plot:** Assess volatility versus average return for informed decisions  
+ 
 
 
 ## Screenshots
@@ -84,20 +59,7 @@ Place the images below in `public/screenshots/`. If your filenames differ, eithe
 
 ---
 
-## Project Structure
-```
-src/
-  app/
-    page.js                # Home
-    funds/page.js          # Funds list
-    scheme/[code]/page.js  # Scheme detail tabs
-    compare/page.js        # Fund comparison tool
-    api/...                # Data endpoints
-  components/
-    NavBar.js
-    ThemeProviderClient.js
-    BrandedLoader.js
-```
+
 
 ---
 

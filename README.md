@@ -4,13 +4,15 @@
 
 ---
 
-## 🛠 Technology Stack
+### ⚡ Tech Powerhouse Behind the App
 
-- **Framework:** Next.js 15 (App Router) with Turbopack  
-- **UI Library:** MUI v7 (with Emotion)  
-- **Charts & Visualization:** `@mui/x-charts`  
-- **Backend:** Next.js API routes (`src/app/api`)  
+1.Core Engine: Built with Next.js 15 (App Router) running on the ultra-fast Turbopack bundler.
 
+2.Interface Magic: Sleek and responsive UI powered by MUI v7, styled with Emotion for full design flexibility.
+
+3.Data Insights: Interactive visuals crafted using @mui/x-charts, bringing fund performance to life.
+
+4.Server Logic: Lightweight and scalable APIs via Next.js server routes (src/app/api) for smooth data flow.
 ---
 
 
@@ -41,15 +43,10 @@ Environment: no special env vars required for local.
 Place the images below in `public/screenshots/`. If your filenames differ, either rename them or update the paths here.
 
 
-<img src="public/screenshots/image.png">
+<img src="public/screenshots/i-1.png">
 
 
-<img src="public/screenshots/image-1.png"/>
-
-### ScreenShot
-
-<img src="public/screenshots/image-2.png">
-
+<img src="public/screenshots/g-1.png"/>
 
 ### ScreenShot
 <img src="public/screenshots/image copy 2.png"/>
